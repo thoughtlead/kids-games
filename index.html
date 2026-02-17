@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RC Plane Racer Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="panel left">
+        <h1>RC Plane Racer Lab</h1>
+        <p class="subtitle">Build planes. Unlock parts. Win races.</p>
+
+        <section class="card">
+          <h2>Progress</h2>
+          <p class="stat"><span id="credits">0</span> Build Credits</p>
+          <p class="stat"><span id="tier">1</span> Tech Tier</p>
+          <p class="muted">Better designs unlock stronger motors and advanced parts.</p>
+        </section>
+
+        <section class="card">
+          <h2>Plane Builder</h2>
+          <div class="field">
+            <label for="planeName">Plane Name</label>
+            <input id="planeName" type="text" maxlength="18" />
+          </div>
+
+          <div class="field">
+            <label for="frameSelect">Frame</label>
+            <select id="frameSelect"></select>
+          </div>
+
+          <div class="field">
+            <label for="wingSelect">Wing</label>
+            <select id="wingSelect"></select>
+          </div>
+
+          <div class="field">
+            <label for="batterySelect">Battery</label>
+            <select id="batterySelect"></select>
+          </div>
+
+          <div class="field">
+            <label for="motorSelect">Motor</label>
+            <select id="motorSelect"></select>
+          </div>
+
+          <div class="field split">
+            <label for="paint">Paint</label>
+            <input id="paint" type="color" value="#ff6a00" />
+          </div>
+
+          <div class="build-stats" id="buildStats"></div>
+          <div id="partMeaning" class="part-meaning"></div>
+          <button class="btn" id="saveBuild">Save Build</button>
+        </section>
+      </aside>
+
+      <main class="world">
+        <canvas id="track" width="960" height="600"></canvas>
+        <div class="hud">
+          <p class="pill" id="activeBuild"></p>
+          <p class="pill">Controls: Arrow Up/Down throttle, Arrow Left/Right turn</p>
+          <p class="pill" id="lapReadout">Lap: 0/3</p>
+          <p class="pill" id="timeReadout">Time: 00.00</p>
+          <p class="pill" id="speedReadout">Speed: 0.00</p>
+        </div>
+      </main>
+
+      <aside class="panel right">
+        <section class="card">
+          <h2>Race</h2>
+          <p id="countdown" class="countdown">Press Start Race</p>
+          <p id="multiplayerStatus" class="muted">Multiplayer: Connecting...</p>
+          <p id="playerCount" class="muted">Players: 1</p>
+          <button class="btn" id="startRace">Start Race</button>
+          <button class="btn secondary" id="resetPlane">Reset Plane</button>
+        </section>
+
+        <section class="card">
+          <h2>Standings</h2>
+          <ul id="standings" class="log"></ul>
+        </section>
+
+        <section class="card">
+          <h2>Unlock Log</h2>
+          <ul id="unlockLog" class="log"></ul>
+        </section>
+
+        <section class="card">
+          <h2>How Unlocks Work</h2>
+          <p>1. Build a higher-rated plane by combining better parts.</p>
+          <p>2. Finish races to earn Build Credits.</p>
+          <p>3. High build rating + race completions unlock new motors and parts tiers.</p>
+        </section>
+      </aside>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

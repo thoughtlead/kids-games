@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kittyverse 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="panel left-panel">
+        <h1>Kittyverse 3D</h1>
+        <p class="subtitle">Create your cat, earn Kitten Dollars, unlock worlds.</p>
+
+        <section class="card">
+          <h2>Player</h2>
+          <div class="row">
+            <label for="playerName">Name</label>
+            <input id="playerName" type="text" maxlength="16" placeholder="Captain Whiskers" />
+          </div>
+          <div class="row">
+            <label for="catColor">Cat Color</label>
+            <input id="catColor" type="color" value="#f4a4ff" />
+          </div>
+          <button id="saveAvatar" class="btn">Save Avatar</button>
+        </section>
+
+        <section class="card">
+          <h2>Wallet</h2>
+          <p class="money"><span id="money">0</span> Kitten Dollars</p>
+          <p class="hint">Finish mini-games to earn more.</p>
+        </section>
+
+        <section class="card">
+          <h2>Shop</h2>
+          <div id="shopItems" class="shop-items"></div>
+        </section>
+      </aside>
+
+      <main>
+        <div id="world"></div>
+        <div id="hud" class="hud">
+          <p id="playerLabel" class="pill"></p>
+          <p class="pill">Move: W/S | Turn Camera: A/D | Zoom: Mouse Wheel | Run: Shift | Interact: E</p>
+          <p id="interactionHint" class="pill warning hidden"></p>
+        </div>
+      </main>
+
+      <aside class="panel right-panel">
+        <section class="card">
+          <h2>Progress</h2>
+          <ul id="gameList" class="game-list"></ul>
+        </section>
+
+        <section class="card">
+          <h2>World Notes</h2>
+          <p>Walk to a glowing game portal and press <strong>E</strong> to play.</p>
+          <p>Walk up to a house and press <strong>E</strong> to buy it and claim your own home.</p>
+          <p>Each new game unlocks after the previous one is completed at least once.</p>
+        </section>
+      </aside>
+    </div>
+
+    <div id="modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <h2 id="modalTitle"></h2>
+        <div id="modalBody"></div>
+        <button id="closeModal" class="btn">Close</button>
+      </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

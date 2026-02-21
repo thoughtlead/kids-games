@@ -3,7 +3,7 @@
 A local browser game prototype where you:
 - Build an RC plane from frames, wings, batteries, and motors
 - Improve build rating to unlock advanced parts and motor types
-- Race on a track with real-time multiplayer (shared countdown, live positions, standings)
+- Race in a 3D world with real-time multiplayer (shared countdown, live positions, standings)
 - Save progress in browser `localStorage`
 
 ## Run locally

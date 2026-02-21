@@ -85,8 +85,11 @@ function buildSnapshot() {
       build: player.build,
       x: player.x,
       y: player.y,
+      alt: player.alt,
       heading: player.heading,
       speed: player.speed,
+      roll: player.roll,
+      pitch: player.pitch,
       lap: player.lap,
       finished: player.finished,
       finishTimeMs: player.finishTimeMs,
@@ -147,8 +150,11 @@ wss.on('connection', (ws) => {
     },
     x: 0,
     y: 0,
+    alt: 6.2,
     heading: 0,
     speed: 0,
+    roll: 0,
+    pitch: 0,
     lap: 0,
     finished: false,
     finishTimeMs: null,
@@ -190,8 +196,11 @@ wss.on('connection', (ws) => {
       if (message.type === 'update') {
         current.x = Number(message.x) || 0
         current.y = Number(message.y) || 0
+        current.alt = Number(message.alt) || 6.2
         current.heading = Number(message.heading) || 0
         current.speed = Number(message.speed) || 0
+        current.roll = Number(message.roll) || 0
+        current.pitch = Number(message.pitch) || 0
         current.lap = Math.max(0, Number(message.lap) || 0)
         current.finished = Boolean(message.finished)
 

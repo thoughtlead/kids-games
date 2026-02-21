@@ -64,7 +64,8 @@
         <canvas id="track" width="960" height="600"></canvas>
         <div class="hud">
           <p class="pill" id="activeBuild"></p>
-          <p class="pill">Controls: Arrow Up/Down throttle, Arrow Left/Right turn</p>
+          <p class="pill" id="trackReadout">Track: Meadow Oval</p>
+          <p class="pill">Controls: Up = climb + faster, Down = descend, Left/Right = turn</p>
           <p class="pill" id="lapReadout">Lap: 0/3</p>
           <p class="pill" id="timeReadout">Time: 00.00</p>
           <p class="pill" id="speedReadout">Speed: 0.00</p>
@@ -74,6 +75,10 @@
       <aside class="panel right">
         <section class="card">
           <h2>Race</h2>
+          <div class="field">
+            <label for="trackSelect">Track</label>
+            <select id="trackSelect"></select>
+          </div>
           <p id="countdown" class="countdown">Press Start Race</p>
           <p id="multiplayerStatus" class="muted">Multiplayer: Connecting...</p>
           <p id="playerCount" class="muted">Players: 1</p>
